@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Honest overlap of Byzantine quorums</title>
+  <desc id="desc">Two five-validator quorums in a seven-validator committee share three validators. At most two can be faulty, so at least one shared validator is honest.</desc>
+  <rect width="1200" height="500" rx="20" fill="#101827"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+    <text x="54" y="58" fill="#95a8c8" font-size="16" letter-spacing="3">LEAN 4 · MATHLIB · FORMAL VERIFICATION</text>
+    <text x="54" y="108" fill="#f4f7ff" font-size="38" font-weight="700">An honest validator in the overlap.</text>
+    <text x="54" y="145" fill="#b3bfd3" font-size="19">7 validators · at most 2 faults · 5 signatures per certificate</text>
+    <circle cx="436" cy="308" r="126" fill="#64c8ff" fill-opacity="0.08" stroke="#64c8ff" stroke-width="2"/>
+    <circle cx="624" cy="308" r="126" fill="#b99bff" fill-opacity="0.08" stroke="#b99bff" stroke-width="2"/>
+    <text x="325" y="205" fill="#64c8ff" font-size="17" font-weight="600">QUORUM A</text>
+    <text x="631" y="205" fill="#b99bff" font-size="17" font-weight="600">QUORUM B</text>
+    <g fill="#17354b" stroke="#64c8ff" stroke-width="2">
+      <circle cx="392" cy="275" r="22"/><circle cx="392" cy="345" r="22"/>
+    </g>
+    <g fill="#30264a" stroke="#b99bff" stroke-width="2">
+      <circle cx="669" cy="275" r="22"/><circle cx="669" cy="345" r="22"/>
+    </g>
+    <g fill="#48252f" stroke="#fc8195" stroke-width="2">
+      <circle cx="530" cy="260" r="21"/><circle cx="530" cy="308" r="21"/>
+    </g>
+    <circle cx="530" cy="356" r="21" fill="#143b36" stroke="#65dfba" stroke-width="2"/>
+    <g fill="#f4f7ff" font-size="16" text-anchor="middle" dominant-baseline="central">
+      <text x="392" y="275">0</text><text x="392" y="345">1</text>
+      <text x="530" y="260">2</text><text x="530" y="308">3</text><text x="530" y="356">4</text>
+      <text x="669" y="275">5</text><text x="669" y="345">6</text>
+    </g>
+    <path d="M 554 356 H 825" fill="none" stroke="#65dfba" stroke-width="1.5"/>
+    <text x="845" y="307" fill="#95a8c8" font-size="16">MINIMUM OVERLAP</text>
+    <text x="845" y="342" fill="#f4f7ff" font-size="27" font-weight="600">5 + 5 − 7 = 3</text>
+    <text x="845" y="374" fill="#65dfba" font-size="18">At least 1 honest signer</text>
+    <text x="54" y="463" fill="#95a8c8" font-size="16">PROVED CONDITION</text>
+    <text x="249" y="463" fill="#f4f7ff" font-size="19">qLeft + qRight &gt; n + f</text>
+    <circle cx="815" cy="455" r="6" fill="#fc8195"/><text x="832" y="461" fill="#b3bfd3" font-size="15">faulty</text>
+    <circle cx="927" cy="455" r="6" fill="#65dfba"/><text x="944" y="461" fill="#b3bfd3" font-size="15">shared honest signer</text>
+  </g>
+</svg>
