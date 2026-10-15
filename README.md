@@ -1,5 +1,6 @@
 # Lean Quorum
 
+[![Lean verification](https://github.com/starkbbk/lean-quorum/actions/workflows/ci.yml/badge.svg)](https://github.com/starkbbk/lean-quorum/actions/workflows/ci.yml)
 [![Local verification](https://img.shields.io/badge/Local_verification-passed-26a69a)](docs/VERIFICATION.md)
 ![Lean 4](https://img.shields.io/badge/Lean-4.33.0--rc1-4768b5)
 ![Mathlib](https://img.shields.io/badge/Mathlib-pinned-8860d0)
@@ -112,11 +113,12 @@ exponential and is intended for small committees.
 
 ## Continuous integration
 
-A GitHub Actions configuration is included in [`ci/lean-verification.yml`](ci/lean-verification.yml).
-To enable automatic verification, place it at `.github/workflows/ci.yml` using
-a GitHub session or token with workflow-write permission. Automatic CI is not
-enabled in this initial publication; the [verification record](docs/VERIFICATION.md)
-reports the completed local checks.
+[GitHub Actions](https://github.com/starkbbk/lean-quorum/actions/workflows/ci.yml)
+builds the project and runs the proof audit, executable checks, and audit
+negative tests on pushes to `main` and pull requests. The active configuration
+is [`.github/workflows/ci.yml`](.github/workflows/ci.yml). The
+[verification record](docs/VERIFICATION.md) separates local evidence from the
+live workflow results.
 
 ## Trust and scope
 

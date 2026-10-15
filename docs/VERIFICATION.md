@@ -26,6 +26,7 @@ fault set `Finset.range f`. It checks the executable enumeration against
 `n + f < 2q`. It is not an exhaustive enumeration of every fault set. The
 parametric formal theorems quantify over arbitrary finite fault sets.
 
-Automatic GitHub CI is not enabled in this initial publication. The workflow
-template is provided at [`ci/lean-verification.yml`](../ci/lean-verification.yml).
-This local record does not stand in for a remote CI result.
+Automatic GitHub verification is enabled in
+[`.github/workflows/ci.yml`](../.github/workflows/ci.yml). See the
+[live workflow runs](https://github.com/starkbbk/lean-quorum/actions/workflows/ci.yml)
+for fresh-run results. This local record does not stand in for a remote CI result.
