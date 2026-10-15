@@ -11,10 +11,11 @@ python3 scripts/verify.py
 
 | Stage | Observed result |
 | --- | --- |
-| `lake build` | All six formal modules, root library, and demo executable built successfully |
-| Explicit theorem index | 42 source-declared theorems, each present in the audited environment |
-| Transitive axiom audit | 129 project declarations checked, including 86 theorem declarations with generated helpers |
+| `lake build` | All eight formal modules, root library, and demo executable built successfully |
+| Explicit theorem index | 61 source-declared theorems, each present in the audited environment |
+| Transitive axiom audit | 173 project declarations checked, including 111 theorem declarations with generated helpers |
 | Permitted foundational axioms | `propext`, `Classical.choice`, `Quot.sound` only |
+| Guarded collector smoke test | Honest conflicting vote rejected, faulty equivocation retained |
 | Executable regression sweep | All 240 configurations passed; each configuration enumerates every quorum pair |
 | Audit negative test: incomplete theorem | Rejected as expected |
 | Audit negative test: incomplete proof inside a definition | Rejected as expected |

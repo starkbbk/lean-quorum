@@ -32,14 +32,26 @@ The two certified values are equal
 This includes the familiar `n = 3f + 1`, `q = 2f + 1` configuration. The proof
 also supports unequal thresholds and natural-number voting weights.
 
+## Start with the reviewable evidence
+
+Read the [reviewer guide](docs/REVIEWER_GUIDE.md), then inspect the
+[executable vote collector and inductive invariant](LeanQuorum/BallotBox.lean)
+and the [synthetic formalization-review cases](LeanQuorum/ReviewCases.lean).
+The collector proves honest no-double-voting for arbitrary input traces and
+connects that invariant to certificate agreement across growing snapshots.
+
 ## What is proved
 
-**42 explicitly declared theorems** across six formal modules.
+**61 explicitly declared theorems** across eight formal modules.
 
 | Result | Lean declaration |
 | --- | --- |
 | Quantitative lower bound on honest overlap | [`quorum_honest_card_bound`](LeanQuorum/Intersection.lean) |
 | Honest intersection under asymmetric thresholds | [`exists_honest_intersection`](LeanQuorum/Intersection.lean) |
+| Executable collector preserves its invariant for every finite trace | [`process_preserves_invariant`](LeanQuorum/BallotBox.lean) |
+| Certificates from processed traces agree | [`processed_certificate_agreement`](LeanQuorum/BallotBox.lean) |
+| Earlier and later processed certificates agree | [`processed_snapshot_agreement`](LeanQuorum/BallotBox.lean) |
+| Concrete countermodels to omitted assumptions and duplicate counting | [`ReviewCases`](LeanQuorum/ReviewCases.lean) |
 | Agreement of authenticated vote certificates | [`certificate_agreement`](LeanQuorum/Certificates.lean) |
 | Conflicting certificates expose a minimum fault count | [`conflicting_certificates_fault_bound`](LeanQuorum/Certificates.lean) |
 | Agreement across growing vote snapshots | [`agreement_across_snapshots`](LeanQuorum/Certificates.lean) |
@@ -134,6 +146,8 @@ LeanQuorum/
   Weighted.lean         Natural-number voting weights
   Checker.lean          Executable checker with a proved specification
   Counterexamples.lean  Explicit boundary cases and conflicting certificates
+  BallotBox.lean        Executable collector, inductive invariant, trace agreement
+  ReviewCases.lean      Synthetic specification-review cases and countermodels
 Audit.lean              Dependency audit of every project declaration
 Main.lean               Runnable examples and exhaustive regression sweep
 scripts/verify.py       Reproducible verification, including negative audit tests

@@ -1,19 +1,31 @@
 # Theorem index
 
-This project explicitly declares **42 theorems** in six formal modules.
+This project explicitly declares **61 theorems** in eight formal modules.
 The dependency audit also checks definitions and compiler-generated declarations.
 
 | Module | Explicit theorems |
 | --- | --- |
+| [BallotBox.lean](../LeanQuorum/BallotBox.lean) | 10 |
 | [Certificates.lean](../LeanQuorum/Certificates.lean) | 5 |
 | [Checker.lean](../LeanQuorum/Checker.lean) | 3 |
 | [Counterexamples.lean](../LeanQuorum/Counterexamples.lean) | 8 |
 | [Intersection.lean](../LeanQuorum/Intersection.lean) | 9 |
+| [ReviewCases.lean](../LeanQuorum/ReviewCases.lean) | 9 |
 | [Threshold.lean](../LeanQuorum/Threshold.lean) | 9 |
 | [Weighted.lean](../LeanQuorum/Weighted.lean) | 8 |
 
 | Declaration | Source |
 | --- | --- |
+| `LeanQuorum.BallotBox.empty_invariant` | [BallotBox.lean:41](../LeanQuorum/BallotBox.lean#L41) |
+| `LeanQuorum.BallotBox.submit_monotone` | [BallotBox.lean:46](../LeanQuorum/BallotBox.lean#L46) |
+| `LeanQuorum.BallotBox.submit_accepts_faulty` | [BallotBox.lean:54](../LeanQuorum/BallotBox.lean#L54) |
+| `LeanQuorum.BallotBox.submit_rejects_conflict` | [BallotBox.lean:61](../LeanQuorum/BallotBox.lean#L61) |
+| `LeanQuorum.BallotBox.submit_preserves_invariant` | [BallotBox.lean:71](../LeanQuorum/BallotBox.lean#L71) |
+| `LeanQuorum.BallotBox.process_preserves_invariant` | [BallotBox.lean:102](../LeanQuorum/BallotBox.lean#L102) |
+| `LeanQuorum.BallotBox.process_monotone` | [BallotBox.lean:110](../LeanQuorum/BallotBox.lean#L110) |
+| `LeanQuorum.BallotBox.process_append` | [BallotBox.lean:119](../LeanQuorum/BallotBox.lean#L119) |
+| `LeanQuorum.BallotBox.processed_certificate_agreement` | [BallotBox.lean:129](../LeanQuorum/BallotBox.lean#L129) |
+| `LeanQuorum.BallotBox.processed_snapshot_agreement` | [BallotBox.lean:139](../LeanQuorum/BallotBox.lean#L139) |
 | `LeanQuorum.certificate_agreement` | [Certificates.lean:27](../LeanQuorum/Certificates.lean#L27) |
 | `LeanQuorum.bft_certificate_agreement` | [Certificates.lean:37](../LeanQuorum/Certificates.lean#L37) |
 | `LeanQuorum.conflicting_overlap_is_faulty` | [Certificates.lean:47](../LeanQuorum/Certificates.lean#L47) |
@@ -39,6 +51,15 @@ The dependency audit also checks definitions and compiler-generated declarations
 | `LeanQuorum.majority_intersection` | [Intersection.lean:78](../LeanQuorum/Intersection.lean#L78) |
 | `LeanQuorum.bft_intersection` | [Intersection.lean:86](../LeanQuorum/Intersection.lean#L86) |
 | `LeanQuorum.honest_quorum_available` | [Intersection.lean:95](../LeanQuorum/Intersection.lean#L95) |
+| `LeanQuorum.ReviewCases.missing_membership_countermodel` | [ReviewCases.lean:16](../LeanQuorum/ReviewCases.lean#L16) |
+| `LeanQuorum.ReviewCases.missing_honesty_countermodel` | [ReviewCases.lean:31](../LeanQuorum/ReviewCases.lean#L31) |
+| `LeanQuorum.ReviewCases.earlier_honesty` | [ReviewCases.lean:45](../LeanQuorum/ReviewCases.lean#L45) |
+| `LeanQuorum.ReviewCases.later_honesty` | [ReviewCases.lean:49](../LeanQuorum/ReviewCases.lean#L49) |
+| `LeanQuorum.ReviewCases.separate_snapshot_honesty_countermodel` | [ReviewCases.lean:65](../LeanQuorum/ReviewCases.lean#L65) |
+| `LeanQuorum.ReviewCases.duplicate_signature_countermodel` | [ReviewCases.lean:76](../LeanQuorum/ReviewCases.lean#L76) |
+| `LeanQuorum.ReviewCases.cardinal_fault_budget_is_not_weight_budget` | [ReviewCases.lean:85](../LeanQuorum/ReviewCases.lean#L85) |
+| `LeanQuorum.ReviewCases.guarded_collector_example` | [ReviewCases.lean:95](../LeanQuorum/ReviewCases.lean#L95) |
+| `LeanQuorum.ReviewCases.collector_deduplicates_repeated_votes` | [ReviewCases.lean:100](../LeanQuorum/ReviewCases.lean#L100) |
 | `LeanQuorum.safe_iff_minimum_le` | [Threshold.lean:22](../LeanQuorum/Threshold.lean#L22) |
 | `LeanQuorum.minimum_is_safe` | [Threshold.lean:27](../LeanQuorum/Threshold.lean#L27) |
 | `LeanQuorum.below_minimum_is_unsafe` | [Threshold.lean:30](../LeanQuorum/Threshold.lean#L30) |

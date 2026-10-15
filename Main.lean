@@ -1,5 +1,6 @@
 import LeanQuorum.Checker
 import LeanQuorum.Threshold
+import LeanQuorum.BallotBox
 
 open LeanQuorum
 
@@ -12,6 +13,14 @@ def main : IO UInt32 := do
   IO.println ""
   IO.println s!"4 validators, 1 fault, threshold 3: {checkSafety (Finset.range 4) 3 {0}}"
   IO.println s!"3 validators, 1 fault, threshold 2: {checkSafety (Finset.range 3) 2 {0}}"
+  IO.println ""
+  let collected := BallotBox.process ({0} : Finset ℕ) ∅
+    [(1, false), (1, true), (0, false), (0, true)]
+  IO.println s!"Collector: honest initial vote={decide ((1, false) ∈ collected)}, honest conflicting vote={decide ((1, true) ∈ collected)}"
+  IO.println s!"Faulty equivocation retained={decide ((0, false) ∈ collected ∧ (0, true) ∈ collected)}"
+  if collected != ({(1, false), (0, false), (0, true)} : Finset (ℕ × Bool)) then
+    IO.eprintln "FAIL: guarded collector smoke test"
+    return 1
   IO.println ""
   IO.println "Exhaustive quorum-pair regression sweep (n = 0..7)..."
   let mut configurations := 0
